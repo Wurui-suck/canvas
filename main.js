@@ -114,10 +114,12 @@ canvas.addEventListener('mousedown', (e) => {
 
     lastX = e.clientX
     lastY = e.clientY
+
 })
 
 canvas.addEventListener('mousemove', (e) => {
 
+    console.log(rubber2)
     if (drawing) {
         drawLine(lastX, lastY, e.clientX, e.clientY)
         lastX = e.clientX
@@ -127,10 +129,7 @@ canvas.addEventListener('mousemove', (e) => {
         eraser.style.display = 'block'
         eraser.style.left = e.clientX - 10 + 'px'
         eraser.style.top = e.clientY - 10 + 'px'
-
-        ctx.cleanRect(e.clientX - 10, e.clientY - 33, 20, 20)
-
-
+        ctx.clearRect(e.clientX - 10, e.clientY - 33, 20, 20)
     }
 
 })
